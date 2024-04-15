@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Optional custom styles */
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Task Management</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Due Time</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample task rows -->
+        {% for row in alltasks %}
+        <tr>
+          <td>{{ row.name }}</td>
+          <td>{{ row.duetime }}</td>
+          <td>{{ row.status }}</td>
+          <td><a href="updatetask/{{ row.id }}">Update</td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows for additional tasks -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
